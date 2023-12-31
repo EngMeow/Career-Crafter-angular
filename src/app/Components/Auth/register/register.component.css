@@ -1,0 +1,17 @@
+/* styles.css or your.component.css */
+.ngx-toastr {
+    max-width: 400px; /* Adjust the maximum width as needed */
+    border-radius: 8px; /* Adjust the border radius as needed */
+    overflow: hidden;
+    
+  }
+  
+  /* You can also style other elements of the toast, such as the title and message */
+  .ngx-toastr .toast-title {
+    font-weight: bold;
+  }
+  
+  .ngx-toastr .toast-message {
+    font-weight: normal;
+  }
+  

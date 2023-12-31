@@ -1,1 +1,37 @@
-<p>login works!</p>
+<section class="py-4 py-md-5 my-5">
+    <div class="container py-md-5">
+      <div class="row">
+        <div class="col-md-6 text-center"><img class="img-fluid w-100" src='../../../../assets/images/illustrations/login.svg'/></div>
+        <div class="col-md-5 col-xl-4 text-center text-md-start">
+          <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Login</strong><br /></span></h2>
+          <form method="post" data-bs-theme="light">
+            <div class="mb-3">
+              <input  class="shadow form-control p-3 rounded-0"
+                      placeholder="Enter you email" />
+          </div>
+            <div class="mb-3">
+              <input class="shadow form-control p-3 rounded-0"
+              placeholder="Enter you password"/>
+          </div>
+
+            <div class="mb-3">
+                          <!-- <button class="btn bg-warning w-100 py-2 text-white fs-bold">
+                              <i class="fa-solid fa-spinner fa-spin"></i>
+                          </button> -->
+                          <button type="submit" class="btn btn-warning w-100 py-2 text-dark rounded-0 shadow">
+                              Login
+                          </button>
+            </div>
+
+              <div class="haventAccount">
+                <button class="btn btn-warning w-100 py-2 text-dark rounded-0 shadow">
+                  <a class="nav-link" routerLink="/register">
+                    Sign up
+                  </a>
+                </button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

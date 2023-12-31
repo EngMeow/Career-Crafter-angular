@@ -13,6 +13,11 @@ import { ApplicationsComponent } from './Components/User/applications/applicatio
 import { NavBarComponent } from './Components/Layout/nav-bar/nav-bar.component';
 import { FooterComponent } from './Components/Layout/footer/footer.component';
 import { NotfoundComponent } from './Components/Layout/notfound/notfound.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,11 +31,19 @@ import { NotfoundComponent } from './Components/Layout/notfound/notfound.compone
     ApplicationsComponent,
     NavBarComponent,
     FooterComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

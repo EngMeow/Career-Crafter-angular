@@ -8,9 +8,10 @@ import { EditProfileComponent } from './Components/Profile/edit-profile/edit-pro
 import { ApplicationsComponent } from './Components/User/applications/applications.component';
 import { JobsComponent } from './Components/User/jobs/jobs.component';
 import { NotfoundComponent } from './Components/Layout/notfound/notfound.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  {path:'' , redirectTo:'dashboard' , pathMatch:'full' },
+  {path:'' , component:HomeComponent },
   {path:'dashboard' , component:DashboardComponent },
   {path:'applications' , component:ApplicationsComponent },
   {path:'jobs' , component:JobsComponent },

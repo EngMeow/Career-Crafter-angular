@@ -1,0 +1,10 @@
+button {
+    color:white;
+    background-color: rgb(12, 12, 100);
+    font-weight: bold;
+}
+
+button:hover {
+    background-color:#ffc107;
+    color: rgb(12, 12, 100);
+}
