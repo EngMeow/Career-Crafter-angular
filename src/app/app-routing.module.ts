@@ -9,17 +9,18 @@ import { ApplicationsComponent } from './Components/User/applications/applicatio
 import { JobsComponent } from './Components/User/jobs/jobs.component';
 import { NotfoundComponent } from './Components/Layout/notfound/notfound.component';
 import { HomeComponent } from './pages/home/home.component';
+import { authGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {path:'' , component:HomeComponent },
-  {path:'dashboard' , component:DashboardComponent },
-  {path:'applications' , component:ApplicationsComponent },
-  {path:'jobs' , component:JobsComponent },
-  {path:'dashboard' , component:DashboardComponent },
+  {path:'dashboard' ,canActivate:[authGuard] , component:DashboardComponent },
+  {path:'applications' ,canActivate:[authGuard], component:ApplicationsComponent },
+  {path:'jobs' ,canActivate:[authGuard], component:JobsComponent },
+  {path:'dashboard' ,canActivate:[authGuard], component:DashboardComponent },
+  {path:':id/profile' ,canActivate:[authGuard], component:ViewProfileComponent },
+  {path:':id/profile/edit' ,canActivate:[authGuard], component:EditProfileComponent },
   {path:'login' , component:LoginComponent },
   {path:'register' , component:RegisterComponent },
-  {path:':id/profile' , component:ViewProfileComponent },
-  {path:':id/profile/edit' , component:EditProfileComponent },
   {path:'**' , component:NotfoundComponent },
 
 ];

@@ -1,29 +1,48 @@
-<section class="py-4 py-md-5 my-5">
+<section class="py-4 py-md-5">
     <div class="container py-md-5">
       <div class="row">
         <div class="col-md-6 text-center"><img class="img-fluid w-100" src='../../../../assets/images/illustrations/login.svg'/></div>
         <div class="col-md-5 col-xl-4 text-center text-md-start">
           <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Login</strong><br /></span></h2>
-          <form method="post" data-bs-theme="light">
-            <div class="mb-3">
-              <input  class="shadow form-control p-3 rounded-0"
-                      placeholder="Enter you email" />
-          </div>
-            <div class="mb-3">
-              <input class="shadow form-control p-3 rounded-0"
-              placeholder="Enter you password"/>
-          </div>
+          <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm(loginForm)" data-bs-theme="light">
+            <div class="email py-2">
+              <input
+                  class="form-control rounded-0 shadow"
+                  type="email"
+                  id="email"
+                  name="email"
+                  formControlName="email"
+                  placeholder="Enter your E-mail"
+              />
+              <div *ngIf="loginForm.get('email')?.errors != null && loginForm.get('email')?.touched" class="pt-2">
+                <p *ngIf="loginForm.get('email')?.errors?.['required']" class="text-danger">E-mail is required</p>
+                <p *ngIf="loginForm.get('email')?.errors?.['email']" class="text-danger">Enter a valid E-mail</p>
+              </div>
 
-            <div class="mb-3">
-                          <!-- <button class="btn bg-warning w-100 py-2 text-white fs-bold">
-                              <i class="fa-solid fa-spinner fa-spin"></i>
-                          </button> -->
-                          <button type="submit" class="btn btn-warning w-100 py-2 text-dark rounded-0 shadow">
-                              Login
-                          </button>
+              </div>
+
+              <div class="password py-2">
+              <input
+                  class="form-control rounded-0 shadow"
+                  id="password"
+                  type="password"
+                  name="password"
+                  formControlName="password"
+                  placeholder="Enter your password"
+              />
+              <div *ngIf="loginForm.get('password')?.errors != null && loginForm.get('password')?.touched" class="pt-2">
+                <p *ngIf="loginForm.get('password')?.errors?.['required']" class="text-danger">Password is required</p>
+                <p *ngIf="loginForm.get('password')?.errors?.['pattern']" class="text-danger">min. Length is 8 & 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character</p>
+              </div>
+              </div>
+
+            <div class="my-2">
+              <button type="submit" class="btn btn-warning w-100 py-2 text-dark rounded-0 shadow">
+                  Login
+              </button>
             </div>
 
-              <div class="haventAccount">
+              <div class="my-3 haventAccount ">
                 <button class="btn btn-warning w-100 py-2 text-dark rounded-0 shadow">
                   <a class="nav-link" routerLink="/register">
                     Sign up
